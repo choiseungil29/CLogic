@@ -41,3 +41,8 @@ nosetests.xml
 
 # Log
 Log.txt
+
+# Others
+.DS_Store
+*.txt
+.idea/
