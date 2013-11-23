@@ -6,6 +6,8 @@ from Event.Event import KeyboardEvent, MouseEvent
 from Scene.TestScene import TestScene
 from SceneManager.SceneManager import SceneManager
 
+from Game.Scene.GameScene import GameScene
+
 from Utils.Log import Logger
 
 
@@ -25,19 +27,19 @@ class Window(object):
         glMatrixMode(GL_PROJECTION)
         gluOrtho2D(0.0, self.width / 2, 0.0, self.height / 2)
 
-        scene = TestScene()
+        scene = GameScene()
         # Init Scene
 
         sceneManager = SceneManager()
-        sceneManager.AddScene("MainScene", scene)
+        sceneManager.AddScene("GameScene", scene)
 
         keyboardEvent = KeyboardEvent()
         mouseEvent = MouseEvent()
 
         # Init Manager
 
-        glutDisplayFunc(sceneManager.Draw)
-        glutIdleFunc(sceneManager.Update)
+        glutDisplayFunc(sceneManager.draw)
+        glutIdleFunc(sceneManager.update)
         glutKeyboardFunc(keyboardEvent.KeyboardDownEvent)
         glutKeyboardUpFunc(keyboardEvent.KeyboardUpEvent)
         glutMotionFunc(mouseEvent.onMouseMove)

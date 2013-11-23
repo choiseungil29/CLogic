@@ -1,6 +1,4 @@
-from OpenGL.raw.GLUT import glutSwapBuffers
 from Scene import Scene
-from OpenGL.GL import *
 from Sprite.Texture import Texture
 from Sprite.Sprite import Sprite
 

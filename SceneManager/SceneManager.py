@@ -10,13 +10,9 @@ class SceneManager(object):
         self.NowScene = None
 
     def AddScene(self, sceneName, scene):
-        if type(sceneName) == str:
-            for base in scene.__class__.__bases__:
-                if Scene == base: # type check (parent)
-                    self.SceneMap[sceneName] = scene
-
-                    if self.NowScene == None:
-                        self.NowScene = scene
+        self.SceneMap[sceneName] = scene
+        if self.NowScene == None:
+            self.NowScene = scene
 
     def RemoveScene(self, sceneName, scene):
         pass
@@ -24,15 +20,15 @@ class SceneManager(object):
     def ReplaceScene(self, sceneName): # if match is found, the name is replaced by scene else return None
         pass
 
-    def Update(self):
+    def update(self):
         if self.NowScene.enabled is True:
-            self.NowScene.Update()
+            self.NowScene.update()
 
-    def Draw(self):
+    def draw(self):
         if self.NowScene.enabled is True:
-            self.NowScene.DrawBegin()
-            self.NowScene.Draw()
-            self.NowScene.DrawEnd()
+            self.NowScene.drawBegin()
+            self.NowScene.draw()
+            self.NowScene.drawEnd()
 
     def Event(self): # later
         pass

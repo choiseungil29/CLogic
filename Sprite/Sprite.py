@@ -11,7 +11,7 @@ class Sprite(object):
 
         self.texture = textureManager.getTexture(textureName)
         self.rotation = 0
-        self.position = 100, 100
+        self.position = 0, 0
         self.anchor = 0.5, 0.5
         self.scale = 1.0, 1.0
         self.width = self.texture.image.size[0]

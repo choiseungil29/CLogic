@@ -7,20 +7,20 @@ class Scene(object):
 
         self.enabled = True
 
-    def Update(self):
+    def update(self):
         pass
 
-    def DrawBegin(self):
+    def drawBegin(self):
         glClear(GL_COLOR_BUFFER_BIT)
 
         glEnable(GL_TEXTURE_2D)
         glEnable(GL_BLEND);
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
-    def Draw(self):
+    def draw(self):
     	pass
 
-    def DrawEnd(self):
+    def drawEnd(self):
     	glDisable(GL_TEXTURE_2D)
     	glDisable(GL_BLEND)
     	glutSwapBuffers()
