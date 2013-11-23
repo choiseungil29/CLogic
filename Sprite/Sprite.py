@@ -1,14 +1,18 @@
 from OpenGL.GL import *
 from .Texture import Texture
+from .TextureManager import TextureManager
 
 class Sprite(object):
     def __init__(self, textureName):
 
-        self.texture = Texture()
-        self.texture.LoadTexture(textureName)
+        textureManager = TextureManager()
+        if not textureManager.existTexture(textureName):
+            textureManager.addTexture(textureName)
+
+        self.texture = textureManager.getTexture(textureName)
         self.rotation = 0
         self.position = 100, 100
-        self.anchor = 0.0, 0.0
+        self.anchor = 0.5, 0.5
         self.scale = 1.0, 1.0
         self.width = self.texture.image.size[0]
         self.height = self.texture.image.size[1]
@@ -29,6 +33,9 @@ class Sprite(object):
 
     def setEnable(self, enable):
         self.enable = enable;
+
+    def update(self):
+        pass
 
     def draw(self):
         glTranslatef(self.position[0], self.position[1], 0.0)

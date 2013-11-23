@@ -3,7 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GL import *
 from Event.Event import KeyboardEvent, MouseEvent
 
-from Scene.MainScene import MainScene
+from Scene.TestScene import TestScene
 from SceneManager.SceneManager import SceneManager
 
 from Utils.Log import Logger
@@ -25,7 +25,7 @@ class Window(object):
         glMatrixMode(GL_PROJECTION)
         gluOrtho2D(0.0, self.width / 2, 0.0, self.height / 2)
 
-        scene = MainScene()
+        scene = TestScene()
         # Init Scene
 
         sceneManager = SceneManager()

@@ -10,16 +10,10 @@ def main():
     try:
         window = Window(int(sys.argv[1]), int(sys.argv[2]))
     except IndexError as e:
-        # Logger.Error(e.message + " " + "(Cngine: 15)")
-        window = Window(800, 600)
+        window = Window(1280, 800)
     finally:
         window.createWindow()
 
 
 if __name__ == '__main__':
     main()
-
-
-
-
-

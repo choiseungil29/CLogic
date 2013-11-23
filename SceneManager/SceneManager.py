@@ -30,7 +30,9 @@ class SceneManager(object):
 
     def Draw(self):
         if self.NowScene.enabled is True:
+            self.NowScene.DrawBegin()
             self.NowScene.Draw()
+            self.NowScene.DrawEnd()
 
     def Event(self): # later
         pass

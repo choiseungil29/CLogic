@@ -15,9 +15,10 @@ class Texture(object):
 
     def LoadTexture(self, filename):
         self.texId = glGenTextures(1)
-        self.image = Image.open(filename)
+        resourcesRoot = "Resources/Image/"
+        self.image = Image.open(resourcesRoot + filename)
         Image_Data = numpy.array(list(self.image.getdata()), numpy.int8)
-        xsize, ysize, imageData = self.image.size[0], self.image.size[1], self.image.tostring("raw", "RGBA", 0, -1)
+        xsize, ysize, imageData = self.image.size[0], self.image.size[1], self.image.tostring("raw", "RGBA", 0, -1) # image.size[0] -> xScale
 
         glBindTexture(GL_TEXTURE_2D, self.texId)
         glPixelStorei(GL_UNPACK_ALIGNMENT, 1)
