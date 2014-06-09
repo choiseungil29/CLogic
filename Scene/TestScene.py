@@ -1,4 +1,5 @@
 from Scene import Scene
+from Utils.Log import Logger
 from Sprite.Texture import Texture
 from Sprite.Sprite import Sprite
 
@@ -8,11 +9,10 @@ class TestScene(Scene):
         Scene.__init__(self)
 
         self.sprite = Sprite("test1.png")
-    def Update(self):
-        Scene.Update(self)
+        self.sprite.position = 100, 100
+    def update(self):
+        Scene.update(self)
 
-    def Draw(self):
-        Scene.Draw(self)
+    def draw(self):
+        Scene.draw(self)
         self.sprite.draw()
-
-        

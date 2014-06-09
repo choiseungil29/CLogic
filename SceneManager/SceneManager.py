@@ -23,12 +23,11 @@ class SceneManager(object):
     def update(self):
         if self.NowScene.enabled is True:
             self.NowScene.update()
-
+        # print 'update'
     def draw(self):
         if self.NowScene.enabled is True:
             self.NowScene.drawBegin()
             self.NowScene.draw()
             self.NowScene.drawEnd()
-
     def Event(self): # later
         pass

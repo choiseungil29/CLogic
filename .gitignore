@@ -35,15 +35,10 @@ nosetests.xml
 .project
 .pydevproject
 
-# Image
-*.png
-*.jpg
-
 # Log
 Log.txt
 
 # Others
 .DS_Store
-*.txt
 .idea/
-Game/
+/venv

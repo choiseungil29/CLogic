@@ -6,7 +6,7 @@ from Event.Event import KeyboardEvent, MouseEvent
 from Scene.TestScene import TestScene
 from SceneManager.SceneManager import SceneManager
 
-from Game.Scene.GameScene import GameScene
+# from Game.Scene.GameScene import GameScene
 
 from Utils.Log import Logger
 
@@ -27,11 +27,11 @@ class Window(object):
         glMatrixMode(GL_PROJECTION)
         gluOrtho2D(0.0, self.width / 2, 0.0, self.height / 2)
 
-        scene = GameScene()
+        scene = TestScene()
         # Init Scene
 
         sceneManager = SceneManager()
-        sceneManager.AddScene("GameScene", scene)
+        sceneManager.AddScene("TestScene", scene)
 
         keyboardEvent = KeyboardEvent()
         mouseEvent = MouseEvent()

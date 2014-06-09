@@ -1,4 +1,5 @@
 from OpenGL.raw.GLUT import glutSwapBuffers
+from OpenGL.GLUT import *
 from OpenGL.GL import *
 
 class Scene(object):
@@ -17,6 +18,8 @@ class Scene(object):
         glEnable(GL_BLEND);
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
+        glMatrixMode(GL_MODELVIEW)
+        glLoadIdentity()
     def draw(self):
     	pass
 
@@ -24,3 +27,4 @@ class Scene(object):
     	glDisable(GL_TEXTURE_2D)
     	glDisable(GL_BLEND)
     	glutSwapBuffers()
+        glutPostRedisplay()
